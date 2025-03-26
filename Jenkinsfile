@@ -1,6 +1,12 @@
 pipeline {
     agent any
     stages {
+        stage('Comprobación inicial') {
+            steps {
+                sh "ls"
+            }
+        }
+
         stage('Build') {
             steps {
                 sh "ls"
