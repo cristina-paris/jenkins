@@ -5,6 +5,12 @@ pipeline {
             steps {
                 echo 'Tarefas para construir, instalar,...'
             }
+            
+        }
+        stage('Comprobación inicial') {
+            steps {
+                sh "ls"
+            }
         }
         stage('Test') {
             steps {
