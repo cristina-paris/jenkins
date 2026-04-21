@@ -1,11 +1,25 @@
 pipeline {
-    agent {
-        docker { image 'python:3' }
-    }
+    agent any
     stages {
+        stage('Build') {
+            steps {
+                echo 'Tarefas para construir, instalar,...'
+            }
+            
+        }
+        stage('Comprobación inicial') {
+            steps {
+                sh "ls"
+            }
+        }
         stage('Test') {
             steps {
-                sh 'python -m unittest test_utils.py'
+                echo 'Tarefas para realizar test.'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Tarefas para desplegar, construir, ...'
             }
         }
     }
