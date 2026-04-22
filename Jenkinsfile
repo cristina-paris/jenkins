@@ -1,27 +1,26 @@
 pipeline {
-  agent none
-  stages {
-    stage("build and test the project") {
-      agent {
-          docker "python:2"
-      }
-      stages {
-        stage('No contenedor') {
-          steps {
-              sh 'python --version'
-          }
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Tarefas para construir, instalar,...'
+            }
+            
         }
-      }
-    }
-    stage("deploy in production") {
-      agent any
-      stages {
-        stage('Na máquina') {
-          steps {
-              sh 'python3 --version'
-          }
+        stage('Comprobación inicial') {
+            steps {
+                sh "ls"
+            }
         }
-      }
+        stage('Test') {
+            steps {
+                echo 'Tarefas para realizar test.'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Tarefas para desplegar, construir, ...'
+            }
+        }
     }
-  }
 }
