@@ -5,7 +5,6 @@ pipeline {
             steps {
                 echo 'Tarefas para construir, instalar,...'
             }
-            
         }
         stage('Comprobación inicial') {
             steps {
